@@ -1,10 +1,14 @@
+#!/usr/bin/python3
+""" pascal's triangle
+"""
+
 def pascal_triangle(n):
     # If input n <= 0, return empty list
     if n <= 0:
         return []
 
     # Initialize list to hold the triangle
-    triangle = []
+    Ptriangle = []
 
     # generate each row of the triangle
     for i in range(n):
@@ -13,10 +17,10 @@ def pascal_triangle(n):
         
         # fill the current row with sum of elements in the previous row
         for j in range(1, i):
-            row[j] = triangle[i-1][j-1] + triangle[i-1][j]
+            row[j] = Ptriangle[i-1][j-1] + Ptriangle[i-1][j]
         
         # Add current row to triangle
-        triangle.append(row)
+        Ptriangle.append(row)
 
     # Return the completed triangle
-    return triangle
+    return Ptriangle
