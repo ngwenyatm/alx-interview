@@ -1,39 +1,22 @@
-function pascal_triangle(n) {
-    // If n < or = to 0, return an empty array
-    if (n <= 0) {
-        return [];
-    }
+def pascal_triangle(n):
+    # If input n <= 0, return empty list
+    if n <= 0:
+        return []
 
-    // Recursive function to generate row at given idx
-    function createRow(idx) {
-        // Base case: The first row is always [1]
-        if (idx === 0) {
-            return [1];
-        }
+    # Initialize list to hold the triangle
+    triangle = []
 
-        //  get the previous row (Recursive)
-        const previousLevel = createRow(idx - 1);
-        // Start current row with 1
-        const currentRow = [1];
+    # generate each row of the triangle
+    for i in range(n):
+        # Start current row with 1s
+        row = [1] * (i + 1)
+        
+        # fill the current row with sum of elements in the previous row
+        for j in range(1, i):
+            row[j] = triangle[i-1][j-1] + triangle[i-1][j]
+        
+        # Add current row to triangle
+        triangle.append(row)
 
-        // fill the current row with sum adjacent elements in the previous row
-        for (let k = 1; k < previousLevel.length; k++) {
-            currentRow.push(previousLevel[k - 1] + previousLevel[k]);
-        }
-
-        // End current row with a 1
-        currentRow.push(1);
-        return currentRow;
-    }
-
-    // Initialize empty array to hold the whole Triangle
-    const pascalTriangle = [];
-
-    // Generate each row  add it to the Triangle
-    for (let i = 0; i < n; i++) {
-        pascalTriangle.push(createRow(i));
-    }
-
-    // Return complete Triangle
-    return pascalTriangle;
-}
+    # Return the completed triangle
+    return triangle
