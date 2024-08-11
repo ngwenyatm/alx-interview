@@ -2,17 +2,16 @@
   """Returns a list of lists representing Pascal's triangle of n rows.
   """
 def pascal_triangle(n):
-    if n <= 0:
-        return []
-      
-    ptriangle = []
+  """Returns n rows of Pascal's triangle."""
 
-    for i in range(n):
-        row = [1] * (i + 1)
+  if n <= 0:
+    return []
 
-        for j in range(1, i):
-            row[j] = ptriangle[i-1][j-1] + ptriangle[i-1][j]
+  pascal_triangle = []
+  for row_num in range(n):
+    row = [1] * (row_num + 1)
+    for col_num in range(1, row_num):
+      row[col_num] = pascal_triangle[row_num - 1][col_num - 1] + pascal_triangle[row_num - 1][col_num]
+    pascal_triangle.append(row)
 
-        ptriangle.append(row)
-
-    return ptriangle
+  return pascal_triangle
