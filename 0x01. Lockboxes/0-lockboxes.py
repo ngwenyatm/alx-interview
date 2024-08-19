@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def canUnlockAll(boxes):
   """function determining if all boxes can be opened.
 
