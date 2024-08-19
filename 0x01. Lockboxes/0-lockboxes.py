@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-def canUnlockAll(boxes):
   """function determining if all boxes can be opened.
 
   Args:
@@ -9,7 +7,7 @@ def canUnlockAll(boxes):
   Returns:
     True if all boxes can be opened, False otherwise.
   """
-
+def canUnlockAll(boxes):
   box_n = len(boxes)
   opened_boxes = set([0])
   keys = set(boxes[0])
