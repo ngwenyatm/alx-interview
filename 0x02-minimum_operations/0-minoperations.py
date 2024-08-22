@@ -1,14 +1,20 @@
 #!/usr/bin/python3
 """
-calculates the fewest number of operations needed to
-result in n number of H characters 
+method that calculates the fewest number of operations needed to
+result in exactly n H characters in the file
 """
 
-def minOperationsDP(n):
-    dp_table = [0] * (n + 1)
-    for i in range(2, n + 1):
-        dp_table[i] = dp_table[i - 1] + 1
-        for j in range(2, int(i**0.5) + 1):
-            if i % j == 0:
-                dp_table[i] = min(dp_table[i], dp_table[i // j] + j)
-    return dp_table[n]
+
+def minOperations(n):
+    if n <= 1:
+        return 0
+    operation = 0
+    factor = 2
+
+    while n > 1:
+        if n % factor == 0:
+            while n % factor == 0:
+                n = n / factor
+                operation += factor
+        factor += 1
+    return operation
