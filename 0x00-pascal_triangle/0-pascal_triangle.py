@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
-"""
-Returns a list of lists representing Pascal's triangle of n rows.
-"""
+    """
+    Generates the Pascal's triangle up to the nth row.
+
+    Args:
+        n: The number of rows in the Pascal's triangle.
+
+    Returns:
+        A list of lists of integers representing the Pascal's triangle.  
+
+    """
 
 
 def pascal_triangle(n):
