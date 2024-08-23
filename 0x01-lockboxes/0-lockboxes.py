@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-  """function determining if all boxes can be opened.
+  """
+  function determining if all boxes can be opened.
   Args:
     boxes: A list of lists of boxes and corresponding keys.
   Returns:
