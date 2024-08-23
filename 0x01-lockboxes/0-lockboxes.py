@@ -1,11 +1,9 @@
 #!/usr/bin/python3
   """function determining if all boxes can be opened.
-
   Args:
     boxes: A list of lists of boxes and corresponding keys.
-
   Returns:
-    True if all boxes can be opened, False otherwise.
+    True if all boxes can be opened, False if otherwise.
   """
 def canUnlockAll(boxes):
   box_n = len(boxes)
