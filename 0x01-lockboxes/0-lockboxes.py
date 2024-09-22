@@ -1,14 +1,12 @@
 #!/usr/bin/python3
+  """function determining if all boxes can be opened.
 
-"""
-Function determining if all boxes can be opened.
-
-Args:
+  Args:
     boxes: A list of lists of boxes and corresponding keys.
 
   Returns:
     True if all boxes can be opened, False otherwise."""
-def canUnlockAll(boxes):
+  def canUnlockAll(boxes):
     num_boxes = len(boxes)
     opened_boxes = {0}
     keys = set(boxes[0])
@@ -24,3 +22,4 @@ def canUnlockAll(boxes):
       return True
     else:
       return False
+    
