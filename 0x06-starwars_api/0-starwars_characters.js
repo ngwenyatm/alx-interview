@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
-const fetch = require('node-fetch'); // Assuming you're using Node.js
-
+const fetch = require('node-fetch');
 async function getStarWarsCharacters(filmId) {
   try {
     const filmResponse = await fetch(`https://swapi.dev/api/films/${filmId}`);
