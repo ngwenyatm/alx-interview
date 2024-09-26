@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 
 """
+ rotates a matrix 90 degrees clockwise.
+
+"""
+
+def rotate_2d_matrix(matrix):
+
+ """
 Rotates a given n x n 2D matrix 90 degrees clockwise in place.
 
  Args:
@@ -10,7 +17,6 @@ Rotates a given n x n 2D matrix 90 degrees clockwise in place.
         None: The function modifies the input matrix in place.
 """
 
-def rotate_2d_matrix(matrix):
     n = len(matrix)
 
  for i in range(n):
