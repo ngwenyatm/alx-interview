@@ -3,6 +3,11 @@
 returns the perimeter of the island described in grid:
 """
 def island_perimeter(grid):
+    """
+    grid: A 2D list representing the island. 1s represent land, 0s represent water.
+    
+    Returns: The perimeter of the island.
+    """
     perimeter = 0
 
     rows = len(grid)
