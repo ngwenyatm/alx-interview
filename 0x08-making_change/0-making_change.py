@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 
-"""
-This contains the making change module/function
-"""
+"""This contains the making change module/function"""
 
 
 def makeChange(coins, total):
