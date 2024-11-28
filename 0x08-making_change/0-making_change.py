@@ -5,6 +5,7 @@ This module contains the making change algorithm based function
 
 
 def makeChange(coins, total):
+    
     """
     Calculate the minimum number of coins needed to make up a given amount.
 
