@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-"""This contains the making change module/function"""
+"""
+This module contains the making change algorithm based function
+"""
 
 
 def makeChange(coins, total):
