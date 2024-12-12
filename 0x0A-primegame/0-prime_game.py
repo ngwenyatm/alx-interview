@@ -12,38 +12,37 @@ def isWinner(x, nums):
     Returns:
         str: "Maria" if Maria wins more rounds, "Ben" if Ben wins more rounds, or None if it is a tie.
     """
-    
-    if not nums or x < 1:
+    if x < 1 or not nums:
         return None
-    
-    max_num = max(nums)
 
-    prime_filter = [True for _ in range(max(max_num + 1, 2))]
-    
-    for i in range(2, int(pow(max_num, 0.5)) + 1):
-        if not prime_filter[i]:
-            continue
-        for j in range(i * i, max_num + 1, i):
-            prime_filter[j] = False
-    
-    prime_filter[0] = prime_filter[1] = False
-    
-    prime_count = 0
-    for i in range(len(prime_filter)):
-        if prime_filter[i]:
-            prime_count += 1
-        prime_filter[i] = prime_count
+    max_value = max(nums)
+    prime_flags = [True] * (max_value + 1)
+    prime_flags[0] = prime_flags[1] = False
 
-    maria_wins = 0
-    
-    for num in nums:
-        if prime_filter[num] % 2 == 1:
-            maria_wins += 1
-    
-    if maria_wins * 2 == len(nums):
-        return None
-    elif maria_wins * 2 > len(nums):
+    for num in range(2, int(max_value**0.5) + 1):
+        if prime_flags[num]:
+            for multiple in range(num * num, max_value + 1, num):
+                prime_flags[multiple] = False
+
+    prime_counts = [0] * (max_value + 1)
+    for num in range(1, max_value + 1):
+        prime_counts[num] = prime_counts[num - 1] + (1 if prime_flags[num] else 0)
+
+    maria_score = 0
+    ben_score = 0
+
+    for n in nums:
+        total_moves = prime_counts[n]
+        if total_moves % 2 == 1:
+            maria_score += 1
+        else:
+            ben_score += 1
+
+    if maria_score > ben_score:
         return "Maria"
-    else:
+    elif ben_score > maria_score:
         return "Ben"
+    else:
+        return None
+
 
